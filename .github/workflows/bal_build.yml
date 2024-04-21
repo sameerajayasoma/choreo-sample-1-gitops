@@ -49,7 +49,7 @@ jobs:
         if: success()
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://e69b-172-56-107-161.ngrok-free.app/builder/buildstatus"
+          url: "https://06f8-172-56-107-161.ngrok-free.app/builder/buildstatus"
           method: POST
           customHeaders: '{"Content-Type": "application/json"}'
           data: |
