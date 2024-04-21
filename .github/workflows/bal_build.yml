@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          repository: 'sameerajayasoma/choreo-sample-1'
+          repository: "sameerajayasoma/choreo-sample-1"
       - name: Get the latest commit SHA of another repository
         id: get-sha
         run: echo "OTHER_REPO_SHA=$(git -C another-repo rev-parse HEAD)" >> $GITHUB_ENV
@@ -58,7 +58,7 @@ jobs:
               "image" : {
                   "registry": "docker.io",
                   "repository": "sameerajayasoma/myapp",
-                  "tag": ${{ env.OTHER_REPO_SHA }}
+                  "tag": "${{ env.OTHER_REPO_SHA }}"
               }
             }
       - name: Update Builder with failure status
