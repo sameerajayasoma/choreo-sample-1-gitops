@@ -58,7 +58,7 @@ jobs:
               "image" : {
                   "registry": "docker.io",
                   "repository": "sameerajayasoma/myapp",
-                  "tag": "$OTHER_REPO_SHA"
+                  "tag": ${{ env.OTHER_REPO_SHA }}
               }
             }
       - name: Update Builder with failure status
