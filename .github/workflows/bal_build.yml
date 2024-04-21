@@ -20,7 +20,7 @@ jobs:
           repository: "sameerajayasoma/choreo-sample-1"
       - name: Get the latest commit SHA of another repository
         id: get-sha
-        run: echo "OTHER_REPO_SHA=$(git -C another-repo rev-parse HEAD)" >> $GITHUB_ENV
+        run: echo "OTHER_REPO_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Test package
         uses: ballerina-platform/ballerina-action@2201.8.6
