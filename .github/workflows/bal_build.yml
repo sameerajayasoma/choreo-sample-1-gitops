@@ -43,7 +43,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: sameerajayasoma/myapp:${{ github.sha }}
+          tags: sameerajayasoma/myapp:${{ env.OTHER_REPO_SHA }}
 
       - name: Update Builder with image details
         if: success()
