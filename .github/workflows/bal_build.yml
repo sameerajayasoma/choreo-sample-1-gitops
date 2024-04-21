@@ -18,6 +18,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: 'sameerajayasoma/choreo-sample-1'
+      - name: Get the latest commit SHA of another repository
+        id: get-sha
+        run: echo "OTHER_REPO_SHA=$(git -C another-repo rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Test package
         uses: ballerina-platform/ballerina-action@2201.8.6
@@ -55,7 +58,7 @@ jobs:
               "image" : {
                   "registry": "docker.io",
                   "repository": "sameerajayasoma/myapp",
-                  "tag": "${{ github.sha }}"
+                  "tag": "$OTHER_REPO_SHA"
               }
             }
       - name: Update Builder with failure status
